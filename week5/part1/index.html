@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    BODY hello
+    <div id="posts"></div>
+    <script>
+      async function loadpost() {
+        const res = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts/1"
+        );
+        document.getElementById("posts").innerHTML = res.data.title;
+      }
+      loadpost();
+    </script>
+  </body>
+</html>
